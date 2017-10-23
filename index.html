@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tradr</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="style.css">
+        <script src="https://use.fontawesome.com/102d004b3a.js"></script>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="draggable" id="draggable-bar">.</div>
+        <div style="margin-top: .4%;">
+            <center>
+                <button class="button" id="info-button" onclick="showWindowI()" style="margin-right: 5%;"><i class="fa fa-info-circle" aria-hidden="true" style="margin-right: 5px;"></i>Information
+                </button>
+                
+                <button class="button" id="money-button" onclick="showWindowM(), clearInfo()" style="margin-right: 5%;"><i class="fa fa-money" aria-hidden="true" style="margin-right: 5px;"></i>Money
+                </button>
+                
+                <button class="button" id="data-button" onclick="showWindowD(), clearInfo()" style="margin-right: 5%;"><i class="fa fa-archive" aria-hidden="true" style="margin-right: 5px;"></i>Data
+                </button>
+            </center>
+        </div>
+        <hr>
+        <div class="general-window">
+            <div class="trade-window" id="info">
+
+                    <input class="button" id="to" placeholder="Email">
+                    <input type="submit" class="button-submit" id="send_email" value="Submit" onclick="email(), clearEmail() ">
+                    <textarea class="info-area" id="content" name="message"></textarea>
+
+            </div>
+            <div class="trade-window" id="money">
+
+                    <input class="button" id="emailM" placeholder="Email">
+                    <input type="submit" class="button-submit" value="Submit" onclick="clearEmailM()">
+                    <br>
+                    <h2>Add Money</h2>
+                    <!-- <button></button> <- This is for inserting your money -->
+
+            </div>
+            <div class="trade-window" id="data">
+
+                    <input class="button" id="emailD" placeholder="Email">
+                    <input type="submit" class="button-submit" value="Submit" onclick="clearEmailD()">
+                    <br>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <br>
+                    <input type="submit" class="button-submit" value="Upload File" id="data-submit">
+
+            </div>
+        </div>
+        
+        <!-- Libraries -->
+        <script>window.$ = window.jQuery = require('jquery');</script>
+    </body>
+</html>

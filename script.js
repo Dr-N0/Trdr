@@ -1,25 +1,22 @@
-
 function email(){
     var nodemailer = require('nodemailer');
     var emailName = $("#email").val();
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'beckettjenen123@gmail.com',
-        pass: 'dabaws1235'
+        user: '',
+        pass: ''
       }
     });
     
-    var from,to,subject,text;
+    var from,to,text;
     $("#send_email").click(function(){  
         to = $("#to").val();
-        from = 'beckettjenen@gmail.com';
-        subject = 'Trade Request';
         text = $("#content").val();
     });
     
     var mailOptions = {
-      from: 'Tradr',
+      from: 'Trdr',
       to: '',
       subject: 'Trade Request',
       text: 'Something went wrong'
@@ -75,4 +72,3 @@ function clearEmailM(){
 function clearEmailD(){ 
     $("#emailD").val("");
 }
-

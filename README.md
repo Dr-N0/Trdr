@@ -1,2 +1,2 @@
-# Tradr
-A platform that allows for info, money and data to be traded with a safe third party
+# terminal
+A modular, all-in-one platform allowing users to manage and use several commonly used tools together in a centralized hub.

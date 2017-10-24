@@ -48,15 +48,15 @@
 
             </div>
             <div class="trade-window" id="data">
-
                     <input class="button placeholder" id="emailD" placeholder="Send trade request: yourname@example.com">
                     <input type="submit" class="button-submit" value="Submit" onclick="clearEmailD()">
                     <a href="settings.html" class="button-settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
                     <br>
-                    <input type="file" name="fileToUpload" id="fileToUpload" onchange="">
-                    <br>
-                    <input type="submit" class="button-submit" value="Upload File" id="data-submit">
-
+                    <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+                        <input id="file-to-upload" multiple type="file">
+                        <br>
+                        <input type="submit" class="button-submit" value="Upload File" id="data-submit">
+                    </form>
             </div>
         </div>
         
@@ -64,4 +64,27 @@
         <script>window.$ = window.jQuery = require('jquery');</script>
         <script src='sha256.min.js'></script>
     </body>
+    <script>
+        
+    var pullfiles=function(){ 
+        // love the query selector
+        var fileInput = document.querySelector("#file-to-upload");
+        var files = fileInput.files;
+        // cache files.length 
+        var fl=files.length;
+        var i=0;
+
+        while ( i < fl) {
+            // localize file var in the loop
+            var file = files[i];
+            console.log(file.name); // This is where you do something with the files
+            i++;
+        }    
+    }
+
+    // set the input element onchange to call pullfiles
+    document.querySelector("#file-to-upload").onchange=pullfiles;
+
+    //a.t
+    </script>
 </html>

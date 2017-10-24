@@ -1,4 +1,4 @@
-function email(){
+function email() {
     var nodemailer = require('nodemailer');
     var transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -16,18 +16,19 @@ function email(){
     });
     
     var mailOptions = {
-      from: 'Trdr',
-      to: '',
-      subject: 'Trade Request',
-      html: '<p>Something went wrong</p>'
-    };
+          from: 'Trdr',
+          to: 'Something went wrong!',
+          subject: 'Trade Request',
+          html: '<p>Something went wrong!</p>'
+        };
     
     var identifier = $("#content").val();
     var identifierThree = $("#content-two").val();
     var identifierTwo = $("#to").val();
     
+    //THIS IS THE PART WHERE YOU CHANGE HOW EVERY MESSAGE SENDS
     mailOptions.to = $("#to").val();
-    mailOptions.html = '<h1 style="text-decoration: none; color: #00743F;"> This information trade request was sent by ' + identifierTwo + '</h1> <br> <button style="background-color: #00743F; color: white; border: 1px solid transparent; outline: none; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; font-size: 25px; border-radius: 50px; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin-right: 1%;">Accept</button> <button style="background-color: #00743F; color: white; border: 1px solid transparent; outline: none; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; font-size: 25px; border-radius: 50px; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">Add More</button> <br> <h1 style="text-decoration: none; color: #00743F;"> Information to be traded </h1> <h2 style="color: black; text-decoration: none; -webkit-text-security: disc;">' + forge_sha256(identifier) + '</h2> <br> <h1 style="text-decoration: none; color: #00743F;"> Additional Information: </h1> <h2 style="color: black; text-decoration: none; -webkit-text-security: disc;">' + identifierThree + '</h2>';
+    mailOptions.html = '<h1 style="text-decoration: none; color: #00743F;"> This information trade request was sent by ' + identifierTwo + '</h1> <br> <a href="Users/beckettjenen/Desktop/electron/download.html" style="background-color: #00743F; color: white; border: 1px solid transparent; outline: none; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; font-size: 25px; border-radius: 50px; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin-right: 1%;">Accept</a> <a href="#" style="background-color: #00743F; color: white; border: 1px solid transparent; outline: none; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; font-size: 25px; border-radius: 50px; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">Add More</a> <br> <h1 style="text-decoration: none; color: #00743F;"> Information to be traded </h1> <h2 style="color: black; text-decoration: none; -webkit-text-security: disc;">' + forge_sha256(identifier) + '</h2> <br> <h1 style="text-decoration: none; color: #00743F;"> Additional Information: </h1> <h2 style="color: black; text-decoration: none; -webkit-text-security: disc;">' + identifierThree + '</h2>';
     
 
     transporter.sendMail(mailOptions, function(error, info){

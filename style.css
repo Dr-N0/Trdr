@@ -175,6 +175,22 @@ input.button{
     overflow: auto;
 }
 
+.addinfo-area{
+    word-wrap: break-word;
+    word-break: break-word;
+    resize: none;
+    height: 50vh;
+    width: 98.5%;
+    color: white;
+    background-color: #00743F;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    overflow: auto;
+}
+
 .placeholder::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #d9d9d9;
 }

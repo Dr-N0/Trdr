@@ -30,16 +30,16 @@
         <div class="general-window">
             <div class="trade-window" id="info">
 
-                    <input class="button placeholder" id="to" placeholder="Send trade request: yourname@example.com">
+                    <input class="button placeholder" id="to" placeholder="Send Request: Email">
                     <input type="submit" class="button-submit" id="send_email" value="Submit" onclick="email(), clearEmail()">
                     <a href="settings.html" class="button-settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                    <textarea class="info-area placeholder" id="content" name="message" placeholder="Information: The stash of money is at..."></textarea>
-                    <textarea class="info-area placeholder" id="content-two" name="message" placeholder="Additional Information: My terms for you to receive this information are..."></textarea>
+                    <textarea class="info-area placeholder" id="content" name="message" placeholder="Information to Trade"></textarea>
+                    <textarea class="info-area placeholder" id="content-two" name="message" placeholder="Terms"></textarea>
 
             </div>
             <div class="trade-window" id="money">
 
-                    <input class="button placeholder" id="emailM" placeholder="Send trade request: yourname@example.com">
+                    <input class="button placeholder" id="emailM" placeholder="Send Request: Email">
                     <input type="submit" class="button-submit" value="Submit" onclick="clearEmailM()">
                     <a href="settings.html" class="button-settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
                     <br>
@@ -48,7 +48,7 @@
 
             </div>
             <div class="trade-window" id="data">
-                    <input class="button placeholder" id="emailD" placeholder="Send trade request: yourname@example.com">
+                    <input class="button placeholder" id="emailD" placeholder="Send Request: Email">
                     <input type="submit" class="button-submit" value="Submit" onclick="clearEmailD()">
                     <a href="settings.html" class="button-settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
                     <br>
@@ -65,23 +65,7 @@
         <script src='sha256.min.js'></script>
     </body>
     <script>
-        
-    var pullfiles=function(){ 
-        // love the query selector
-        var fileInput = document.querySelector("#file-to-upload");
-        var files = fileInput.files;
-        // cache files.length 
-        var fl=files.length;
-        var i=0;
-
-        while ( i < fl) {
-            // localize file var in the loop
-            var file = files[i];
-            console.log(file.name); // This is where you do something with the files
-            i++;
-        }    
-    }
-
+    
     // set the input element onchange to call pullfiles
     document.querySelector("#file-to-upload").onchange=pullfiles;
 
